@@ -10,7 +10,7 @@ import sys
 import psycopg2
 
 def connectPostgreSQL():
-    conn = psycopg2.connect(database="testdb", user="postgres", password="yplhao888", host="127.0.0.1", port="5432")
+    conn = psycopg2.connect(database="testdb", user="postgres", password=, host="127.0.0.1", port="5432")
     
     cursor=conn.cursor()
     cursor.execute('''create table public.member(
@@ -24,7 +24,7 @@ singal varchar(128)
     
 
 def insertOperate():
-    conn = psycopg2.connect(database="testdb", user="postgres", password="yplhao888", host="127.0.0.1", port="5432")
+    conn = psycopg2.connect(database="testdb", user="postgres", password=, host="127.0.0.1", port="5432")
     cursor=conn.cursor()
     cursor.execute("insert into public.member(id,name,password,singal)\
 values(1,'member0','password0','signal0')")
@@ -48,7 +48,7 @@ def selectOperate():
     conn.close()
 
 def updateOperate():
-    conn = psycopg2.connect(database="testdb", user="postgres", password="yplhao888", host="127.0.0.1", port="5432")
+    conn = psycopg2.connect(database="testdb", user="postgres", password=, host="127.0.0.1", port="5432")
     cursor=conn.cursor()
     cursor.execute("update public.member set name='update ...' where id=2")
     conn.commit()
@@ -61,7 +61,7 @@ def updateOperate():
     conn.close()   
 
 def deleteOperate():
-    conn = psycopg2.connect(database="testdb", user="postgres", password="yplhao888", host="127.0.0.1", port="5432")
+    conn = psycopg2.connect(database="testdb", user="postgres", password=, host="127.0.0.1", port="5432")
     cursor=conn.cursor()
 
     cursor.execute("select id,name,password,singal from public.member")
